@@ -105,7 +105,7 @@ function loadProjects(department) {
         projectCard.classList.add('project-card');
         projectCard.innerHTML = `<a href="quotes.html">
             <h2>${project.title}</h2>
-            <img src="Computer img/sample.png" class="projectimg"/>
+            <img src="sample.png" class="projectimg"/>
             <p>${project.description}</p>
             <p class="price">Rs${project.price}</p>
             <button>Buy Now</button>
