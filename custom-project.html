@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Project Submission</title>
+    <style>
+        /* Dark theme styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .cproj-card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .cproj-card h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            color: #4879e4;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ccc;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2b2b2b;
+            color: #fff;
+            font-size: 1em;
+            height: auto;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: 2px solid #4879e4;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4879e4;
+            color: #000;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #4879e4;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="headers">
+        <nav>
+            <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+            <img src="logo.png" class="logoimg">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="cproj-card">
+            <h2>Submit Custom Project</h2>
+            <form id="projectForm">
+                <div class="form-group">
+                    <label for="projectName">Project Name</label>
+                    <input type="text" id="projectName" placeholder="Enter project name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" placeholder="Enter department" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="requirements">Project Requirements</label>
+                    <textarea id="requirements" placeholder="Enter project requirements" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="timeline">Project Timeline</label>
+                    <input type="text" id="timeline" placeholder="Enter project timeline" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Submit Project</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>We provide top-notch project solutions for engineering students. Explore our wide range of customizable projects designed to meet your academic needs.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="quotes.html">Quotes by Dev's</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com">📷Instagram</a> 
+                    <a href="https://www.instagram.com">📷WhatsApp</a>                     
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 ProjectNest. All rights reserved.
+        </div>
+    </footer>
+
+
+    <script>
+        // JavaScript to handle form submission and console log the inputs
+        document.getElementById('projectForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const projectName = document.getElementById('projectName').value;
+            const department = document.getElementById('department').value;
+            const requirements = document.getElementById('requirements').value;
+            const timeline = document.getElementById('timeline').value;
+
+            console.log("Project Name: " + projectName);
+            console.log("Department: " + department);
+            console.log("Requirements: " + requirements);
+            console.log("Timeline: " + timeline);
+
+            alert('Project submitted successfully!');
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
