@@ -71,63 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-        // Array of image URLs (You can add more images or change the paths as needed)
-        const images = [
-            "img 1.jpg",
-            "img 2.jpg",
-            "img 3.jpg",
-            "img 4.jpg",
-            "img 5.jpg"
-        ];
-
-        let currentIndex = 0;
-        const imageElement = document.getElementById('about-image');
-        const displayTime = 5000; // 5 seconds
-
-        // Function to cycle through images with smooth transitions
-        function cycleImages() {
-            // Fade out the current image
-            imageElement.style.opacity = '0';
-
-            setTimeout(() => {
-                // Change the image after fading out
-                imageElement.src = images[currentIndex];
-
-                // Fade in the new image
-                imageElement.style.opacity = '1';
-
-                // Update the index to the next image (looping back at the end)
-                currentIndex = (currentIndex + 1) % images.length;
-            }, 1000); // 1-second delay for fade-out
-        }
-
-        // Start cycling through images every 5 seconds
-        setInterval(cycleImages, displayTime);
-
-        // Initial image load
-        window.onload = cycleImages;
-
-        // Fade in animation for the about-container
-        window.addEventListener('DOMContentLoaded', () => {
-            document.querySelector('.about-container').style.opacity = '1';
-
-            const aboutBoxes = document.querySelectorAll('.about-box');
-
-            // Add scrolling effect for each box
-            window.addEventListener('scroll', () => {
-                aboutBoxes.forEach((box) => {
-                    const boxPosition = box.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-
-                    if (boxPosition < windowHeight - 100) {
-                        box.style.transform = 'translateY(0)';
-                        box.style.opacity = '1';
-                        box.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
-                    }
-                });
-            });
-        });
-
 const noteTextstr="⚠️ Note :This is not a dynamic website so if you want to send message to our team please copy the msg that we provided in that copy button and go to @projectnest_projectseller our instagram account and DM us...."
 const noteText = document.getElementById("note-text");
 noteText.innerText=noteTextstr;
