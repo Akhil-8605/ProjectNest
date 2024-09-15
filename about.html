@@ -11,8 +11,8 @@
 <body>
     <header class="headers">
         <nav>
-            <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
             <img src="logo.png" class="logoimg">
+            <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -20,10 +20,59 @@
             </ul>
         </nav>
     </header>
-    <div class="hero">
-        <h1>ProjectNest</h1>
-        <div class="hero-center">
-           About
+
+    <div class="img-main">
+        <div class="image-container">
+            <img id="about-image" src="img 3.jpg" alt="About Me" />
+        </div>
+    </div>
+
+
+    <div class="about-container">
+        <div>
+            <h1>Founders of our ProjecNest</h1>
+        </div>
+        <div class="about-box" id="box1">
+            <div class="about-image">
+                <img src="akhil.jpg" alt="Person 1" />
+            </div>
+            <div class="about-text">
+                <h2>Akhilesh Adam</h2>
+                <p>
+                    Computer Engineering<br>
+                    Student of SPM Polytechnic Kumthe<br>
+                    3rd Year<br>
+                </p>
+                <div class="about-extra">
+                    <p>
+                        Proffesion :<br>
+                        Web development, Android application development, Rect App development , Cloude Servicing
+                        ,Database Handling<br>
+                        Expert in Coding Language :<br>
+                        Java, XML, C++, JavaScript, HTML, CSS, c, Assembly
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-box" id="box2">
+            <div class="about-image">
+                <img src="onkar.jpg" alt="Person 2" />
+            </div>
+            <div class="about-text">
+                <h2>Onkar Saka</h2>
+                <p>
+                    Computer Engineering<br>
+                    Student of SPM Polytechnic Kumthe<br>
+                    3rd Year<br>
+                </p>
+                <div class="about-extra">
+                    <p>
+                        Proffesion :<br>
+                        I dont know....
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -31,7 +80,8 @@
         <div class="footer-container">
             <div class="footer-column">
                 <h3>About Us</h3>
-                <p>We provide top-notch project solutions for engineering students. Explore our wide range of customizable projects designed to meet your academic needs.</p>
+                <p>We provide top-notch project solutions for engineering students. Explore our wide range of
+                    customizable projects designed to meet your academic needs.</p>
             </div>
 
             <div class="footer-column">
@@ -47,8 +97,8 @@
             <div class="footer-column">
                 <h3>Follow Us</h3>
                 <div class="social-icons">
-                    <a href="https://www.instagram.com">📷Instagram</a> 
-                    <a href="https://www.instagram.com">📷WhatsApp</a>                     
+                    <a href="https://www.instagram.com">📷Instagram</a>
+                    <a href="https://www.instagram.com">📷WhatsApp</a>
                 </div>
             </div>
         </div>
@@ -57,7 +107,73 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.headers');
+            if (window.scrollY > 50) {
+                header.classList.add('blur')
+            } else {
+                header.classList.remove('blur');
+            }
+        });
+        // Array of image URLs (You can add more images or change the paths as needed)
+        const images = [
+            "img 1.jpg",
+            "img 2.jpg",
+            "img 3.jpg",
+            "img 4.jpg",
+            "img 5.jpg"
+        ];
+
+        let currentIndex = 0;
+        const imageElement = document.getElementById('about-image');
+        const displayTime = 5000; // 5 seconds
+
+        // Function to cycle through images with smooth transitions
+        function cycleImages() {
+            // Fade out the current image
+            imageElement.style.opacity = '0';
+
+            setTimeout(() => {
+                // Change the image after fading out
+                imageElement.src = images[currentIndex];
+
+                // Fade in the new image
+                imageElement.style.opacity = '1';
+
+                // Update the index to the next image (looping back at the end)
+                currentIndex = (currentIndex + 1) % images.length;
+            }, 1000); // 1-second delay for fade-out
+        }
+
+        // Start cycling through images every 5 seconds
+        setInterval(cycleImages, displayTime);
+
+        // Initial image load
+        window.onload = cycleImages;
+
+        // Fade in animation for the about-container
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.about-container').style.opacity = '1';
+
+            const aboutBoxes = document.querySelectorAll('.about-box');
+
+            // Add scrolling effect for each box
+            window.addEventListener('scroll', () => {
+                aboutBoxes.forEach((box) => {
+                    const boxPosition = box.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (boxPosition < windowHeight - 100) {
+                        box.style.transform = 'translateY(0)';
+                        box.style.opacity = '1';
+                        box.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+                    }
+                });
+            });
+        });
+
+    </script>
 </body>
 
 </html>

@@ -70,3 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loadProjects(currentPage);
     }
 });
+
+const noteTextstr="⚠️ Note :This is not a dynamic website so if you want to send message to our team please copy the msg that we provided in that copy button and go to @projectnest_projectseller our instagram account and DM us...."
+const noteText = document.getElementById("note-text");
+noteText.innerText=noteTextstr;
