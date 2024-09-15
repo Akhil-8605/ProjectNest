@@ -108,6 +108,25 @@
         </div>
     </footer>
     <script>
+
+window.addEventListener('scroll', function () {
+    const header = document.querySelector('.headers');
+    if (window.scrollY > 50) {
+        header.classList.add('blur')
+    } else {
+        header.classList.remove('blur');
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
+});
+
      // Array of image URLs (You can add more images or change the paths as needed)
         const images = [
             "img 1.jpg",
