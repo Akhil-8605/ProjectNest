@@ -134,8 +134,10 @@
                 </div>
 
                 <div class="form-group">
-                    <button>Copy the msg</button>
-                    <button>Go to account</button>
+                    <button onclick="copymsg()">Copy the msg</button>
+
+                    <a href="https://www.instagram.com/projectnest_projectseller?igsh=OGFqMTF4cGd5ymhp"><button>Go to
+                            account</button></a>
                 </div>
             </form>
         </div>
@@ -194,8 +196,32 @@
             console.log("Timeline: " + timeline);
 
         });
+        var customprojmsg = "Hi, I am looking for a custom project tailored to my requirements. Could we discuss the specifications and how the project can be customized? Please share the process and pricing for custom development. Thanks!"
+        function copymsg() {
+            const projectName = document.getElementById('projectName').value;
+            const department = document.getElementById('department').value;
+            const requirements = document.getElementById('requirements').value;
+            const timeline = document.getElementById('timeline').value;
+
+            // Base message
+            var customprojmsg = "Hi, I am looking for a custom project tailored to my requirements. Could we discuss the specifications and how the project can be customized? Please share the process and pricing for custom development. Thanks!";
+
+            // Add the form values to the custom message
+            var fullMessage = `${customprojmsg}\n\nProject Name: ${projectName}\nDepartment: ${department}\nRequirements: ${requirements}\nTimeline: ${timeline}`;
+
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(fullMessage).then(() => {
+                // Display success message
+                alert("text copied succesfully \n Go the account and DM us");
+            }).catch(err => {
+                // Display error message if copying fails
+                alert("Failed to copy text!");
+            });
+
+        }
+
+        
     </script>
-    <script src="script.js"></script>
 </body>
 
 </html>

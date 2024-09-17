@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <style>
+        .view-project-card {
+            display: grid;
+            background-color: #121212;
+            padding: 20px;
+            border: 2px solid rgb(209, 200, 200);
+            border-radius: 9px;
+            width: auto;
+            height: auto;
+        }
+
+        .proj-align {
+            display: flex;
+        }
+
+        .info-align {
+            display: table-column;
+            padding: 25px;
+        }
+
+        .view-project-card img {
+            width: 50%;
+            height: 100%;
+            border-radius: 19px;
+            transition: transform 0.3s ease;
+        }
+
+        .view-project-card img:hover {
+            transform: scale(0.9);
+        }
+
+        .view-project-card h2 {
+            text-align: center;
+            text-decoration: bold;
+            font-size: 48px;
+        }
+
+        .view-project-card p {
+            font-size: 28px;
+            text-wrap: balance;
+        }
+
+        .view-project-card button {
+            font-size: 24px;
+            background-color: #4879e4;
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 19px;
+            margin-top: 5px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .view-project-card button:hover {
+            background-color: #808080;
+            transform: scale(1.1);
+        }
+
+        .send-msg-hero {
+            background-color: var(--card-bg-color);
+            border-radius: 8px;
+            padding: 2rem;
+            height: auto;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .send-msg-hero button {
+            font-size: 18px;
+            background-color: #4879e4;
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 19px;
+            margin-top: 5px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .send-msg-hero button:hover {
+            transform: scale(1.1);
+        }
+
+        @media(max-width : 768px) {
+            .view-project-card {
+                display: grid;
+            }
+
+            .proj-align {
+                display: contents;
+            }
+
+            .info-align {
+                display: block;
+                padding: 0;
+            }
+
+            .view-project-card h2 {
+                font-size: 28px;
+            }
+
+            .view-project-card img {
+                width: 100%;
+                object-fit: fill;
+            }
+
+            .view-project-card p {
+                width: 100%;
+                font-size: 18px;
+            }
+
+            .view-project-card button {
+                font-size: 18px;
+            }
+
+            .send-msg-hero button {
+                font-size: 14px;
+            }
+        }
+    </style>
+
+    <header class="headers">
+        <nav>
+            <img src="logo.png" class="logoimg">
+            <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Project Details</h1>
+        <div id="project-details" class="view-project-card"></div>
+    </main>
+
+    <div class="note-section">
+        <p class="note-text" id="note-text"></p>
+    </div>
+
+    <main>
+        <div class="send-msg-hero">
+            <h1>Send Message</h1>
+            <div class="project-card" onclick="copymsg()">
+                <p id="predefine-msg"></p>
+            </div>
+            <button onclick="copymsg()">Copy the Message</button>
+            <a href="https://www.instagram.com/projectnest_projectseller?igsh=OGFqMTF4cGd5ymhp">
+                <button>Go to Accounnt</button>
+            </a>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>We provide top-notch project solutions for engineering students. Explore our wide range of
+                    customizable projects designed to meet your academic needs.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="quotes.html">Quotes by Dev's</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com">📷Instagram</a>
+                    <a href="https://www.instagram.com">📷WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 ProjectNest. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const noteTextstr = "⚠️ Note :This is not a dynamic website so if you want to send message to our team please copy the msg that we provided in that copy button and go to @projectnest_projectseller our instagram account and DM us...."
+        const noteText = document.getElementById("note-text");
+        noteText.innerText = noteTextstr;
+
+        // Function to get URL parameters
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                title: params.get('title'),
+                description: params.get('description'),
+                image: params.get('image'),
+                price: params.get('price')
+            };
+        }
+
+        // Load project details on the page
+        function loadProjectDetails() {
+            const project = getQueryParams();
+            const projectDetailsContainer = document.getElementById('project-details');
+
+            projectDetailsContainer.innerHTML = `
+            <h2>${project.title}</h2>
+            <div class="proj-align">
+            <img src="${project.image}" alt="Project Image" />
+            <div class="info-align">
+            <p>${project.description}</p>
+            <p class="price">Rs ${project.price}</p>
+            <button id="buyNowButton">Buy now</button>
+            </div>
+            </div>
+    `;
+        }
+
+        loadProjectDetails();
+
+        const predefinemsg = document.getElementById("predefine-msg")
+        const project = getQueryParams();
+
+        predefinemsg.innerText = `Hello, I would like to buy the project (${project.title}) right away. Please send me the payment details and the next steps. Thank you.`
+
+        document.getElementById('buyNowButton').addEventListener('click', function () {
+            window.scrollTo({
+                top: 600, // Scrolls to 600px from the top of the page
+                behavior: 'smooth' // Ensures a smooth scroll transition
+            });
+        });
+
+        function copymsg() {
+            const copyText = predefinemsg.innerText;
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText).then(() => {
+                // Display success message
+                alert("text copied succesfully \n Go the account and DM us");
+            }).catch(err => {
+                alert("Failed to copy text!");
+            });
+
+        }
+
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.headers');
+            if (window.scrollY > 50) {
+                header.classList.add('blur')
+            } else {
+                header.classList.remove('blur');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+            });
+        });
+
+    </script>
+</body>
+
+</html>

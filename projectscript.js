@@ -121,13 +121,14 @@ function loadProjects(department) {
     projects[department].forEach(project => {
         const projectCard = document.createElement('div');
         projectCard.classList.add('project-card');
-        projectCard.innerHTML = `<a href="quotes.html">
+        projectCard.innerHTML = `
+        <a href="viewproject.html?title=${encodeURIComponent(project.title)}&description=${encodeURIComponent(project.description)}&image=${encodeURIComponent(project.image)}&price=${project.price}">
             <h2>${project.title}</h2>
-            <img src=${project.image} class="projectimg"/>
+            <img src=${project.image} class="projectimg" alt="Project Image"/>
             <p>${project.description}</p>
-            <p class="price">Rs${project.price}</p>
-            <button>Buy Now</button>
-            </a>
+            <p class="price">Rs ${project.price}</p>
+            <button>View Project</button>
+        </a>
         `;
         projectContainer.appendChild(projectCard);
     });
