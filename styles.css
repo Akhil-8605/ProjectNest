@@ -23,6 +23,7 @@ body {
 }
 
 header {
+    position: relative;
     color: white;
     background-color: var(--card-bg-color);
     padding: 1rem;
