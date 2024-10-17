@@ -2,115 +2,62 @@ function loadProjects(department) {
     const projects = {
         electronics: [
             {
-                title: "Smart Home Automation System",
-                image: "sample.png",
-                description: "Design and implement a IoT-based smart home system.",
+                title: "Gesture Control Bicycle Indicator Gloves",
+                image: "ej-proj-gloves.jpg",
+                description: "Design gloves that use hand gestures to activate bicycle turn indicators.",
                 price: 299
             },
             {
-                title: "Digital Signal Processing Toolkit",
-                image: "sample.png",
-                description: "Develop a comprehensive DSP toolkit for audio applications.",
+                title: "LIDAR Micro Drone With Proximity Sensing",
+                image: "ej-proj-drone.jpg",
+                description: "Develop a compact drone equipped with LIDAR for precise obstacle detection and proximity sensing.",
                 price: 249
             },
             {
-                title: "5G Network Simulator",
-                image: "sample.png",
-                description: "Create a simulator for 5G network protocols and performance.",
-                price: 399
-            },
-            {
-                title: "Smart Home Automation System",
-                image: "sample.png",
-                description: "Design and implement a IoT-based smart home system.",
-                price: 299
-            },
-            {
-                title: "Digital Signal Processing Toolkit",
-                image: "sample.png",
-                description: "Develop a comprehensive DSP toolkit for audio applications.",
-                price: 249
-            },
-            {
-                title: "5G Network Simulator",
-                image: "sample.png",
-                description: "Create a simulator for 5G network protocols and performance.",
+                title: "3D Scanner Machine using Arduino",
+                image: "ej-proj-3dscanner.jpg",
+                description: "Build a 3D scanning device powered by Arduino for capturing object dimensions.",
                 price: 399
             }
         ],
         computer: [
             {
-                title: "AI-powered Chatbot",
-                image: "sample.png",
-                description: "Build an intelligent chatbot using natural language processing.",
+                title: "Hotel Management System",
+                image: "co-proj-hotel.webp",
+                description: "Develop a system to manage bookings, staff, and operations efficiently for hotels.",
                 price: 349
             },
             {
-                title: "Blockchain-based Voting System",
-                image: "sample.png",
-                description: "Develop a secure and transparent voting system using blockchain.",
+                title: "Notes & Password Manager",
+                image: "co-proj-notpassman.webp",
+                description: "Create a secure app to store notes and manage passwords with encryption.",
                 price: 499
             },
             {
                 title: "Cloud-based File Storage Service",
-                image: "sample.png",
-                description: "Create a scalable cloud storage solution with encryption.",
+                image: "co-proj-cloudstorage.webp",
+                description: "Build a platform for storing, sharing, and accessing files seamlessly via the cloud.",
                 price: 299
             },
-            {
-                title: "AI-powered Chatbot",
-                image: "sample.png",
-                description: "Build an intelligent chatbot using natural language processing.",
-                price: 349
-            },
-            {
-                title: "Blockchain-based Voting System",
-                image: "sample.png",
-                description: "Develop a secure and transparent voting system using blockchain.",
-                price: 499
-            },
-            {
-                title: "Cloud-based File Storage Service",
-                image: "sample.png",
-                description: "Create a scalable cloud storage solution with encryption.",
-                price: 299
-            }
         ],
         mechanical: [
             {
-                title: "3D-Printed Prosthetic Hand",
-                image: "sample.png",
-                description: "Design and fabricate a functional 3D-printed prosthetic hand.",
-                price: 399
+                title: "5 Speed Gearbox Mechanism",
+                image: "me-proj-5speedgear.jpg",
+                description: "Create a mechanical system that enables smooth shifting between five different gear ratios.",
+                price: 399,
             },
             {
-                title: "Autonomous Drone for Inspection",
-                image: "sample.png",
-                description: "Build a drone for automated industrial inspections.",
+                title: "Six Legged Spider Bot using Klann Mechanism",
+                image: "me-proj-spidercar.jpg",
+                description: "Develop a robotic spider with six legs, utilizing the Klann mechanism for realistic movement.",
                 price: 549
+
             },
             {
-                title: "Energy-Efficient HVAC System",
-                image: "sample.png",
-                description: "Develop an innovative, energy-saving HVAC system.",
-                price: 449
-            },
-            {
-                title: "3D-Printed Prosthetic Hand",
-                image: "sample.png",
-                description: "Design and fabricate a functional 3D-printed prosthetic hand.",
-                price: 399
-            },
-            {
-                title: "Autonomous Drone for Inspection",
-                image: "sample.png",
-                description: "Build a drone for automated industrial inspections.",
-                price: 549
-            },
-            {
-                title: "Energy-Efficient HVAC System",
-                image: "sample.png",
-                description: "Develop an innovative, energy-saving HVAC system.",
+                title: "Automated Coconut Scraping Machine",
+                image: "me-proj-coconutscrap.jpg",
+                description: "Design a machine that efficiently scrapes the flesh from coconuts automatically.",
                 price: 449
             }
         ]

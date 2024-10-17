@@ -1,11 +1,11 @@
-window.addEventListener('scroll', function () {
-    const header = document.querySelector('.headers');
-    if (window.scrollY > 50) {
-        header.classList.add('blur')
-    } else {
-        header.classList.remove('blur');
-    }
-});
+// window.addEventListener('scroll', function () {
+//     const header = document.querySelector('.headers');
+//     if (window.scrollY > 50) {
+//         header.classList.add('blur')
+//     } else {
+//         header.classList.remove('blur');
+//     }
+// });
 
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
